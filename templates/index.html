@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p><b>Хранилище файлов с доступом по http</b></p>
+
+<p>Доступны следующие операции:</p>
+
+<p><b>Upload</b></p>
+<p>Загрузка файла осуществляется по api запросу вида http://127.0.0.1:8000/file/upload/путь_к_файлу</p>
+<p>В ответ сервер возвращает словарь в формате JSON вида {"status": true, "file_path": "F:/Dr Web/storage/storageapp/temp.txt", "hash": "ab4f83f9b476169972758aef0cb4115e70fd6ecd", "file_upload_path": "F:\\Dr Web\\storage\\store\\ab\\ab4f83f9b476169972758aef0cb4115e70fd6ecd.txt"}</p>
+<p>где "status" - это статус загрузки файла на сервер(True - успешно, False - запрос не обработан); "file_path" - переданный адрес файла для загрузки; "hash" - хеш файла после обработки хеш-функцией; "file_upload_path" - адрес директории на сервере в которую загружен файл</p>
+
+<p><b>Download</b></p>
+<p>Скачивание файла осуществляется по api запросу вида http://127.0.0.1:8000/file/download/хеш_файла</p>
+<p>В ответ сервер возвращает словарь в формате JSON вида {"status": true, "file_download_path": "F:\\Dr Web\\storage\\store\\ab\\ab4f83f9b476169972758aef0cb4115e70fd6ecd.txt", "hash": "ab4f83f9b476169972758aef0cb4115e70fd6ecd"}</p>
+<p>где "status" - это статус получения файла с сервера(True - успешно, False - запрос не обработан); "file_download_path" - адрес расположения файла на сервере для скачивания; "hash" - переданный хеш файла.
+
+<p><b>Delete</b></p>
+<p>Удаление файла осуществляется по api запросу вида http://127.0.0.1:8000/file/delete/хеш_файла</p>
+<p>В ответ сервер возвращает словарь в формате JSON вида {"status": true, "file_delete_url": "F:\\Dr Web\\storage\\store\\ab\\ab4f83f9b476169972758aef0cb4115e70fd6ecd.txt", "hash": "ab4f83f9b476169972758aef0cb4115e70fd6ecd"}
+<p>где "status" - это статус получения файла с сервера(True - успешно, False - запрос не обработан); "file_delete_url" - адрес расположения удаленного файла на сервере; "hash" - переданный хеш файла.
+
+</body>
+</html>

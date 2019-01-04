@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download</title>
+</head>
+<body>
+    {% if url %}
+        <p>Загруженный файл</p>
+        <p><i>Переданный путь:</i>  {{url}}</p>
+        <p><i>Полученный Hash:</i> {{hashs}}</p>
+    {% else %}
+        <p>Загрузка файла</p>
+        <p>Вставте адрес файла в строку браузера после download/путь_до_файла</p>
+    {% endif %}
+</body>
+</html>
